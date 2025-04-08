@@ -3,7 +3,6 @@
 # Théorie et construction des ordinaux
 
 <!--toc:start-->
-
 - [Théorie et construction des ordinaux](#théorie-et-construction-des-ordinaux)
   - [Ordres](#ordres)
     - [Définition](#définition)
@@ -34,8 +33,23 @@
       - [Unicité des ordinaux](#unicité-des-ordinaux)
         - [Lemme : Réciproque d'une bijection croissante](#lemme-réciproque-dune-bijection-croissante)
         - [Preuve](#preuve)
-  - [Ordinaux](#ordinaux) - [Définition](#définition) - [Quelques exemples](#quelques-exemples) - [Propriétés](#propriétés) - [Minimum](#minimum) - [Preuve](#preuve) - [Les éléments d'un ordinal sont des ordinaux](#les-éléments-dun-ordinal-sont-des-ordinaux) - [Preuve](#preuve) - [Transitivité](#transitivité) - [Ordinaux et segments initiaux](#ordinaux-et-segments-initiaux) - [Ordre large sur les ordinaux](#ordre-large-sur-les-ordinaux) - [Successeur](#successeur) - [Totalité de $\in$](#totalité-de-in) - [Bon ordre des ensembles d'ordinaux](#bon-ordre-des-ensembles-dordinaux) - [Majorant d'un ensemble d'ordinaux](#majorant-dun-ensemble-dordinaux) - [Arithmétique ordinale](#arithmétique-ordinale)
-  <!--toc:end-->
+  - [Ordinaux](#ordinaux)
+    - [Définition](#définition)
+    - [Quelques exemples](#quelques-exemples)
+    - [Propriétés](#propriétés)
+      - [Minimum](#minimum)
+        - [Preuve](#preuve)
+      - [Les éléments d'un ordinal sont des ordinaux](#les-éléments-dun-ordinal-sont-des-ordinaux)
+        - [Preuve](#preuve)
+          - [Transitivité](#transitivité)
+          - [Bon ordre](#bon-ordre)
+      - [Ordre large sur les ordinaux](#ordre-large-sur-les-ordinaux)
+      - [Successeur](#successeur)
+      - [Totalité de $\in$](#totalité-de-in)
+      - [Bon ordre des ensembles d'ordinaux](#bon-ordre-des-ensembles-dordinaux)
+      - [Majorant d'un ensemble d'ordinaux](#majorant-dun-ensemble-dordinaux)
+    - [Arithmétique ordinale](#arithmétique-ordinale)
+<!--toc:end-->
 
 Qu'y a-t-il après l'infini dénombrable ($\#\N$) ? On sait que $\N=(\N+1)\cup\{0\}$, et pourtant il est tentant de dire que $(\N+1)\cup\{0\}$ contient un élément de plus que $\N$ (on a décalé de $1$ et ajouté $0$): les ordinaux formalisent cette notion, en ce qu'ils permettent d'ordonner différents infinis.
 
@@ -277,17 +291,37 @@ On considère $\min\alpha\in\alpha$ par transitivité. Si $\min\alpha\neq\empty$
 
 #### Les éléments d'un ordinal sont des ordinaux
 
-Si $\beta\in\alpha$ et que $\alpha$ est un ordinal, alors $\beta$ est un ordinal
+Si $\beta\in\alpha$ et que $\alpha$ est un ordinal, alors $\beta$ est un ordinal.
 
 ##### Preuve
 
 ###### Transitivité
 
-Soient $x\in\beta$ et $y\in x$. Par hypothèse, $y\in x\in\alpha$ (transitivité sur $\alpha$), donc $y\in\alpha$. Or, $\alpha$ est bien ordonné, donc $\{y,\beta\}\subseteq\alpha$ admet un minimum.
+Soient $x\in\beta$ et $y\in x$. Par hypothèse, $y\in x\in\alpha$ (transitivité sur $\alpha$), donc $y\in\alpha$. Or, $\alpha$ est bien ordonné par $\in$ et :
+- $y\in\alpha$
+- $x\in\alpha$
+- $\beta\in\alpha$
+- $y\in x\in\beta$
 
-#### Ordinaux et segments initiaux
+Ceci entraîne donc que $y\in\beta$ car $\in$ est une relation d'ordre (transitive) sur $\alpha$. 
+
+_ATTENTION : il est nécessaire de bien faire ces vérifications d'appartenance à $\alpha$, car une série d'appartenance en série, même si $\in$ est une "relation d'ordre", n'est pas automatiquement réduite par transitivité : rien n'indique que l'on est dans le bon ensemble sur lequel comparer. Pour donner un contre-exemple, on peut prendre $\alpha=\{\{\{0\}\}\}$, $y=0$, $x=\{0\}$, $\beta=\{\{0\}\}$ : on a bien $y\in x\in\beta\in\alpha$, mais on n'a pas $y\in\alpha$ ! Pourtant $\in$ est une bien relation d'ordre strict sur $\alpha$ (même un bon ordre) car $\alpha$ n'a qu'un seul élément…_
+
+###### Bon ordre
+
+Il s'agit de vérifier que $(\beta,\in)$ est bien ordonné. Ceci est immédiat par transitivité de $\alpha$ car $\beta\subseteq\alpha$ donc $\in$ est un bon ordre par simple restriction.
+
+<!-- #### Ordinaux et segments initiaux -->
 
 #### Ordre large sur les ordinaux
+
+L'ordre large associé à $\in$ est $\subseteq$ sur les ordinaux.
+
+##### Preuve
+
+Soient $\alpha$ et $\beta$ deux ordinaux tels que $\beta=\alpha$ ou $\beta\in\alpha$. Si $\beta=\alpha$, on a de manière évidente que $\beta\subseteq\alpha$. Sinon $\beta\in\alpha$, et par transitivité de $\alpha$, $\beta\subseteq\alpha$.
+
+Réciproquement, si $\beta\subseteq\alpha$ et $\beta\neq\alpha$, alors 
 
 #### Successeur
 
