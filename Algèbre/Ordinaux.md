@@ -37,13 +37,14 @@
     - [Définition](#définition)
     - [Quelques exemples](#quelques-exemples)
     - [Propriétés](#propriétés)
-      - [Minimum](#minimum)
-        - [Preuve](#preuve)
       - [Les éléments d'un ordinal sont des ordinaux](#les-éléments-dun-ordinal-sont-des-ordinaux)
         - [Preuve](#preuve)
           - [Transitivité](#transitivité)
           - [Bon ordre](#bon-ordre)
       - [Ordre large sur les ordinaux](#ordre-large-sur-les-ordinaux)
+        - [Preuve](#preuve)
+      - [Plus petit ordinal](#plus-petit-ordinal)
+        - [Preuve](#preuve)
       - [Successeur](#successeur)
       - [Totalité de $\in$](#totalité-de-in)
       - [Bon ordre des ensembles d'ordinaux](#bon-ordre-des-ensembles-dordinaux)
@@ -281,14 +282,6 @@ $\{\empty,\{\empty\}\}$ est un ordinal. En effet, la transitivité est évidente
 
 ### Propriétés
 
-#### Minimum
-
-Si $\alpha\neq\empty$, alors $\empty\in\alpha$.
-
-##### Preuve
-
-On considère $\min\alpha\in\alpha$ par transitivité. Si $\min\alpha\neq\empty$, alors on peut prendre un élément $x\in\min\alpha$, mais alors par transitivité, $x\in\alpha$ : ceci contredit la minimalité de $x$, à moins que $x=\min\alpha$. Or ceci est exclu car $\in$ est un bon ordre, a fortiori un ordre strict.
-
 #### Les éléments d'un ordinal sont des ordinaux
 
 Si $\beta\in\alpha$ et que $\alpha$ est un ordinal, alors $\beta$ est un ordinal.
@@ -321,7 +314,15 @@ L'ordre large associé à $\in$ est $\subseteq$ sur les ordinaux.
 
 Soient $\alpha$ et $\beta$ deux ordinaux tels que $\beta=\alpha$ ou $\beta\in\alpha$. Si $\beta=\alpha$, on a de manière évidente que $\beta\subseteq\alpha$. Sinon $\beta\in\alpha$, et par transitivité de $\alpha$, $\beta\subseteq\alpha$.
 
-Réciproquement, si $\beta\subseteq\alpha$ et $\beta\neq\alpha$, alors 
+Réciproquement, si $\beta\subseteq\alpha$ et $\beta\neq\alpha$, alors il s'agit de montrer que $\beta\in\alpha$. Par hypothèse, $\alpha\backslash\beta\neq\empty$ et $\alpha$ est bien ordonné, donc on peut prendre son plus petit élément $\gamma\in\alpha\backslash\beta$. $\gamma$ est un ordinal (c'est un élément de $\alpha$, ordinal) et $\gamma\subseteq\alpha$ par transitivité de $\alpha$. L'idée est de montrer que $\gamma$ 
+
+#### Plus petit ordinal
+
+Si $\alpha\neq\empty$, alors $\empty\in\alpha$. _On verra par la suite que $\in$ est un ordre total sur la classe des ordinaux._
+
+##### Preuve
+
+On considère $\min\alpha\in\alpha$ par transitivité. Si $\min\alpha\neq\empty$, alors on peut prendre un élément $x\in\min\alpha$, mais alors par transitivité, $x\in\alpha$ : ceci contredit la minimalité de $x$, à moins que $x=\min\alpha$. Or ceci est exclu car $\in$ est un bon ordre, a fortiori un ordre strict.
 
 #### Successeur
 
