@@ -120,7 +120,7 @@ On dit qu'un ensemble est totalement ordonné lorsqu'on peut toujours comparer d
 #### Définition
 
 $\leq$ est total lorsque :
-$$\forall (a,b)\in A^2,\quad (a\leq b)\wedge(b\leq a)$$
+$$\forall (a,b)\in A^2,\quad (a\leq b)\vee(b\leq a)$$
 
 #### Exemples
 
