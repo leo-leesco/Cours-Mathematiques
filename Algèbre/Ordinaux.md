@@ -265,6 +265,8 @@ Ces propriétés essentielles établies, et en particulier "l'unicité" des ordi
 On dit qu'un ensemble $\alpha$ est un ordinal lorsque :
 
 - transitivité : $\forall x\in \alpha,\quad\forall y\in x,\quad y\in \alpha$
+
+  De manière équivalente : $\forall x\in\alpha,\quad x\subseteq\alpha$
 - $\in$ est un bon ordre sur $\alpha$
 
 ### Quelques exemples
@@ -310,25 +312,52 @@ Il s'agit de vérifier que $(\beta,\in)$ est bien ordonné. Ceci est immédiat p
 
 L'ordre large associé à $\in$ est $\subseteq$ sur les ordinaux.
 
-##### Preuve
+##### L'ordre large est inclus dans $\subseteq$
 
 Soient $\alpha$ et $\beta$ deux ordinaux tels que $\beta=\alpha$ ou $\beta\in\alpha$. Si $\beta=\alpha$, on a de manière évidente que $\beta\subseteq\alpha$. Sinon $\beta\in\alpha$, et par transitivité de $\alpha$, $\beta\subseteq\alpha$.
 
-Réciproquement, si $\beta\subseteq\alpha$ et $\beta\neq\alpha$, alors il s'agit de montrer que $\beta\in\alpha$. Par hypothèse, $\alpha\backslash\beta\neq\empty$ et $\alpha$ est bien ordonné, donc on peut prendre son plus petit élément $\gamma\in\alpha\backslash\beta$. $\gamma$ est un ordinal (c'est un élément de $\alpha$, ordinal) et $\gamma\subseteq\alpha$ par transitivité de $\alpha$. L'idée est de montrer que $\gamma$ 
+##### $\subseteq$ est inclus dans l'ordre large
 
-#### Plus petit ordinal
+Réciproquement, si $\beta\subseteq\alpha$ et $\beta\neq\alpha$, alors il s'agit de montrer que $\beta\in\alpha$. Par hypothèse, $\alpha\backslash\beta\neq\empty$ et $\alpha$ est bien ordonné, donc on peut prendre son plus petit élément $\gamma\in\alpha\backslash\beta$. $\gamma$ est un ordinal (c'est un élément de $\alpha$, ordinal) et $\gamma\subseteq\alpha$ par transitivité de $\alpha$. L'idée est de montrer que $\gamma=\beta$ car alors $\gamma=\beta\in\alpha$.
 
-Si $\alpha\neq\empty$, alors $\empty\in\alpha$. _On verra par la suite que $\in$ est un ordre total sur la classe des ordinaux._
+###### $\gamma\subseteq\beta$
 
-##### Preuve
+Soit $x\in\gamma\subseteq\alpha$ : si $x\notin\beta$, i.e. $x\in\alpha\backslash\beta$, alors, sur $\alpha$ muni de la relation d'ordre $\in$, $x\in\gamma$. Or, $\gamma$ est supposé être le minimum de $\alpha\backslash\beta$ : c'est impossible. Donc $x\in\beta$. En d'autres termes, $\gamma\subseteq\beta$.
 
-On considère $\min\alpha\in\alpha$ par transitivité. Si $\min\alpha\neq\empty$, alors on peut prendre un élément $x\in\min\alpha$, mais alors par transitivité, $x\in\alpha$ : ceci contredit la minimalité de $x$, à moins que $x=\min\alpha$. Or ceci est exclu car $\in$ est un bon ordre, a fortiori un ordre strict.
+###### $\beta\subseteq\gamma$
+
+On prend $x\in\beta$ et on s'intéresse à $\{x,\gamma\}\subseteq\alpha$. Si $x=\gamma$, alors $\gamma\in\beta$. Sauf que $\gamma\in\alpha\backslash\beta$ : c'est absurde. Si $\gamma\in x$, comme $x$ est un ordinal (c'est un élément de $\beta$), $x\subseteq\beta$ et donc $\gamma\in x\subseteq\beta$ et $\gamma\in\beta$ ce qui est encore absurde. Donc $x\in\gamma$ et $\beta\subseteq\gamma$.
+
+<!-- #### Plus petit ordinal -->
+<!---->
+<!-- Si $\alpha\neq\empty$, alors $\empty\in\alpha$. _On verra par la suite que $\in$ est un ordre total sur la classe des ordinaux._ -->
+<!---->
+<!-- ##### Preuve -->
+<!---->
+<!-- On considère $\min\alpha\in\alpha$ par transitivité. Si $\min\alpha\neq\empty$, alors on peut prendre un élément $x\in\min\alpha$, mais alors par transitivité, $x\in\alpha$ : ceci contredit la minimalité de $x$, à moins que $x=\min\alpha$. Or ceci est exclu car $\in$ est un bon ordre, a fortiori un ordre strict. -->
 
 #### Successeur
 
+On pose $\alpha^+=\alpha\cup\{\alpha\}$ (où $\alpha$ est un ordinal). $\alpha^+$ est un ordinal, et  pour tout ordinal $\beta$ tel que $\alpha\in\beta$, $\alpha^+\subseteq\beta$.
+
+##### $\alpha^+$ est un ordinal
+
+###### $\alpha^+$ transitif
+
+Si $x\in\alpha^+$, alors $x\in\alpha$ ou $x\in\{\alpha\}$, i.e. $x=\alpha$. Dans tous les cas, $x\subseteq\alpha\subseteq\alpha^+$.
+
+###### $\in$ transitif
+
+Si $(x,y,z)\in(\alpha^+)^3$ et $x\in y$ et $y\in z$, alors comme $z\in\alpha^+$ et que $\alpha^+$ est transitif, $z\subseteq\alpha^+$. De même, $y\in z\subseteq\alpha^+$ donc $y\in\alpha^+$ donc $y\subseteq\alpha^+$
+
+###### Bon ordre
+
+Si $A\subseteq\alpha^+$ non vide, on distingue deux cas :
+- $\alpha\notin A$ : dans ce cas, $A\subseteq\alpha$ et $A$ admet donc un plus petit élément pour $\in$ par bon ordre de $\alpha$
+- $\alpha\in A$ : si $A\backslash\alpha=\empty$, $\alpha$ est bien le plus petit élément de $A$, sinon on prend le plus petit élément $x$ de $A\backslash\alpha$ : la preuve de la transitivité donne immédiatement que $x\subseteq\alpha$, et donc $x$ est bien le plus petit élément de $A$ (puisque $\subseteq$ est un ordre large).
 #### Totalité de $\in$
 
-#### Bon ordre des ensembles d'ordinaux
+#### Bon ordre des ensembles d'ordinaux                                                                                                                                    p
 
 #### Majorant d'un ensemble d'ordinaux
 
