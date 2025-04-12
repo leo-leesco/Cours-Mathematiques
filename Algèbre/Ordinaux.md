@@ -42,10 +42,15 @@
           - [Transitivité](#transitivité)
           - [Bon ordre](#bon-ordre)
       - [Ordre large sur les ordinaux](#ordre-large-sur-les-ordinaux)
-        - [Preuve](#preuve)
-      - [Plus petit ordinal](#plus-petit-ordinal)
-        - [Preuve](#preuve)
+        - [L'ordre large est inclus dans $\subseteq$](#lordre-large-est-inclus-dans-subseteq)
+        - [$\subseteq$ est inclus dans l'ordre large](#subseteq-est-inclus-dans-lordre-large)
+          - [$\gamma\subseteq\beta$](#gammasubseteqbeta)
+          - [$\beta\subseteq\gamma$](#betasubseteqgamma)
       - [Successeur](#successeur)
+        - [$\alpha^+$ est un ordinal](#alpha-est-un-ordinal)
+          - [$\alpha^+$ transitif](#alpha-transitif)
+          - [$\in$ est un ordre](#in-est-un-ordre)
+          - [Bon ordre](#bon-ordre)
       - [Totalité de $\in$](#totalité-de-in)
       - [Bon ordre des ensembles d'ordinaux](#bon-ordre-des-ensembles-dordinaux)
       - [Majorant d'un ensemble d'ordinaux](#majorant-dun-ensemble-dordinaux)
@@ -346,18 +351,19 @@ On pose $\alpha^+=\alpha\cup\{\alpha\}$ (où $\alpha$ est un ordinal). $\alpha^+
 
 Si $x\in\alpha^+$, alors $x\in\alpha$ ou $x\in\{\alpha\}$, i.e. $x=\alpha$. Dans tous les cas, $x\subseteq\alpha\subseteq\alpha^+$.
 
-###### $\in$ transitif
+###### $\in$ est un ordre
 
-Si $(x,y,z)\in(\alpha^+)^3$ et $x\in y$ et $y\in z$, alors comme $z\in\alpha^+$ et que $\alpha^+$ est transitif, $z\subseteq\alpha^+$. De même, $y\in z\subseteq\alpha^+$ donc $y\in\alpha^+$ donc $y\subseteq\alpha^+$
+- transitivité : Si $(x,y,z)\in(\alpha^+)^3$ et $x\in y$ et $y\in z$, alors comme $z\in\alpha^+$ et que $\alpha^+$ est transitif, $z\subseteq\alpha^+$. De même, $y\in z\subseteq\alpha^+$ donc $y\in\alpha^+$ donc $y\subseteq\alpha^+$
 
 ###### Bon ordre
 
 Si $A\subseteq\alpha^+$ non vide, on distingue deux cas :
 - $\alpha\notin A$ : dans ce cas, $A\subseteq\alpha$ et $A$ admet donc un plus petit élément pour $\in$ par bon ordre de $\alpha$
 - $\alpha\in A$ : si $A\backslash\alpha=\empty$, $\alpha$ est bien le plus petit élément de $A$, sinon on prend le plus petit élément $x$ de $A\backslash\alpha$ : la preuve de la transitivité donne immédiatement que $x\subseteq\alpha$, et donc $x$ est bien le plus petit élément de $A$ (puisque $\subseteq$ est un ordre large).
+
 #### Totalité de $\in$
 
-#### Bon ordre des ensembles d'ordinaux                                                                                                                                    p
+#### Bon ordre des ensembles d'ordinaux
 
 #### Majorant d'un ensemble d'ordinaux
 
