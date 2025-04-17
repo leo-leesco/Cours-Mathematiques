@@ -341,29 +341,80 @@ On prend $x\in\beta$ et on s'intéresse à $\{x,\gamma\}\subseteq\alpha$. Si $x=
 <!---->
 <!-- On considère $\min\alpha\in\alpha$ par transitivité. Si $\min\alpha\neq\empty$, alors on peut prendre un élément $x\in\min\alpha$, mais alors par transitivité, $x\in\alpha$ : ceci contredit la minimalité de $x$, à moins que $x=\min\alpha$. Or ceci est exclu car $\in$ est un bon ordre, a fortiori un ordre strict. -->
 
+#### Antiréflexivité de $\in$ sur les ordinaux
+
+Si $\alpha$ est un ordinal, alors $\alpha\notin\alpha$.
+
+##### Preuve
+
+Supposons par l'absurde que $\alpha\in\alpha$. Alors, $\in$ étant un ordre strict sur $\alpha$, pour tout $x\in\alpha$, $x\notin x$. En particulier, pour $x=\alpha$, $\alpha\notin\alpha$, ce qui est absurde et conclut.
+
 #### Successeur
 
-On pose $\alpha^+=\alpha\cup\{\alpha\}$ (où $\alpha$ est un ordinal). $\alpha^+$ est un ordinal, et  pour tout ordinal $\beta$ tel que $\alpha\in\beta$, $\alpha^+\subseteq\beta$.
+On pose $\alpha^+=\alpha\cup\{\alpha\}$ (où $\alpha$ est un ordinal). Par construction, $\alpha\in\alpha^+$. Alors :
+
+1. $\alpha^+$ est un ordinal
+1. pour tout ordinal $\beta$ tel que $\alpha\in\beta$, $\alpha^+\subseteq\beta$.
+1. $\alpha^+$ est le successeur de $\alpha$, au sens où si $\alpha\in\beta\subseteq\alpha^+$, alors $\beta=\alpha^+$. En d'autres termes, il n'existe aucun ordinal strictement compris entre $\alpha$ et $\alpha^+$.
 
 ##### $\alpha^+$ est un ordinal
 
 ###### $\alpha^+$ transitif
 
-Si $x\in\alpha^+$, alors $x\in\alpha$ ou $x\in\{\alpha\}$, i.e. $x=\alpha$. Dans tous les cas, $x\subseteq\alpha\subseteq\alpha^+$.
+Si $x\in\alpha^+$, alors $x\in\alpha$ donc $x\subseteq\alpha$ (transitivité de $\alpha$) ou $x\in\{\alpha\}$, i.e. $x=\alpha$. Dans tous les cas, $x\subseteq\alpha\subseteq\alpha^+$.
 
 ###### $\in$ est un ordre
 
-- transitivité : Si $(x,y,z)\in(\alpha^+)^3$ et $x\in y$ et $y\in z$, alors comme $z\in\alpha^+$ et que $\alpha^+$ est transitif, $z\subseteq\alpha^+$. De même, $y\in z\subseteq\alpha^+$ donc $y\in\alpha^+$ donc $y\subseteq\alpha^+$
+- antiréflexivité : si $x\in\alpha^+$, soit $x=\alpha$, ou alors $x\in\alpha$, mais [tout élément d'un ordinal est un ordinal](#les-éléments-dun-ordinal-sont-des-ordinaux) , donc $x$ est un ordinal dans tous les cas. De là, par [antiréflexivité de $\in$ sur les ordinaux](#antiréflexivité-de-in-sur-les-ordinaux), $x\notin x$.
+- transitivité : Si $(x,y,z)\in(\alpha^+)^3$ avec $x\in y$ et $y\in z$. On rappelle que cela signifie en particulier que $x$, $y$ et $z$ sont tous des ordinaux (d'après le point précédent), on résume les différents cas possibles ($x\in\alpha$ ou $x=\alpha$) dans le tableau suivant, où $\in$ symbolise le premier cas, et $=$ désigne le second (s'il n'y a rien dans la case, le raisonnement est valide indépendamment du cas):
+
+| $x$ | $y$ | $z$ | conclusion |
+| -- | - | - | - |
+| $\in$ | $\in$ | $\in$ | c'est une conséquence de la transitivité de $\in$ sur $\alpha$ |
+| $\in$ | $\in$ | $=$ | on a immédiatement $x\in z=\alpha$ |
+| $\in$ | $=$ | $\in$ | $y=\alpha\in z\in\alpha$ entraîne $\alpha\subseteq z\subseteq\alpha$ donc $z=\alpha$, mais alors $\alpha\in\alpha$ ce qui est absurde |
+| $=$ | $\in$ |  | $x=\alpha\in y\in\alpha$ entraîne $\alpha\subseteq y\subseteq\alpha$ donc $y=\alpha$, mais alors $\alpha\in\alpha$ ce qui est absurde |
+| $\in$ | $=$ | $=$ | on a $\alpha=y\in z=\alpha$, ce qui est absurde |
+| $=$ | $=$ | | on a $\alpha=x\in y=\alpha$, ce qui est absurde |
+
+_Remarquons qu'on a bien énuméré tous les cas, qui sont au nombre de $2^3=8$._
+
+On a donc montré que pour les cas non triviaux, il y a bien transitivité de $\in$ sur $\alpha^+$.
 
 ###### Bon ordre
 
 Si $A\subseteq\alpha^+$ non vide, on distingue deux cas :
 - $\alpha\notin A$ : dans ce cas, $A\subseteq\alpha$ et $A$ admet donc un plus petit élément pour $\in$ par bon ordre de $\alpha$
-- $\alpha\in A$ : si $A\backslash\alpha=\empty$, $\alpha$ est bien le plus petit élément de $A$, sinon on prend le plus petit élément $x$ de $A\backslash\alpha$ : la preuve de la transitivité donne immédiatement que $x\subseteq\alpha$, et donc $x$ est bien le plus petit élément de $A$ (puisque $\subseteq$ est un ordre large).
+- $\alpha\in A$ : si $A\backslash\alpha=\empty$, $\alpha$ est bien le plus petit élément de $A$, sinon on prend le plus petit élément $x$ de $A\backslash\alpha$ : [la preuve de la transitivité](#alpha-transitif) donne immédiatement que $x\subseteq\alpha$, et donc $x$ est bien le plus petit élément de $A$ (puisque $\subseteq$ est un ordre large).
+
+##### Passage à l'ordre large
+
+Si $\alpha\in\beta$, alors si $x\in\alpha^+$, soit $x=\alpha$ et donc $x\in\beta$, sinon $x\in\alpha\subseteq\beta$ (par transitivité). En résumé, on a bien montré que $\alpha^+\subseteq\beta$.
+
+##### $\alpha^+$ est le successeur de $\alpha$
+
+Par la propriété précédente, si $\alpha\in\beta\subseteq\alpha^+$, alors $\alpha^+\subseteq\beta$ donc $\beta=\alpha^+$.
 
 #### Totalité de $\in$
 
+Si $\alpha$ et $\beta$ sont deux ordinaux, alors ils sont comparables. En d'autres termes, on se trouve dans (exactement) l'un des cas suivants :
+$$\alpha\in\beta\qquad\alpha=\beta\qquad\alpha\ni\beta$$
+
+##### Preuve
+
+On suppose par que $\alpha$ et $\beta$ ne sont pas comparables, i.e. on a $\alpha\notin\beta$, $\alpha\notni\beta$ et $\alpha\neq\beta$. On s'intéresse alors à $\gamma=\alpha\cap\beta\subseteq\alpha$. Naturellement, si $\gamma=\alpha$, alors $\alpha\subseteq\beta$, ce qui est exclu, donc $\gamma\in\alpha$. Par un raisonnement analogue, $\gamma\in\beta$, mais cela se traduit par $\gamma\in\alpha\cap\beta=\gamma$. Or ceci est absurde car $\gamma\in\alpha$ qui est muni de l'ordre strict $\in$.
+
+En résumé, $\alpha$ et $\beta$ sont comparables.
+
 #### Bon ordre des ensembles d'ordinaux
+
+Soit $A$ un ensemble d'ordinaux. Alors $(A,\in)$ est bien ordonné.
+
+##### Preuve
+
+###### $(A,\in)$ est ordonné
+
+###### $\in$ est un bon ordre
 
 #### Majorant d'un ensemble d'ordinaux
 
