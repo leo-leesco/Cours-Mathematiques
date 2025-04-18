@@ -3,6 +3,7 @@
 # Théorie et construction des ordinaux
 
 <!--toc:start-->
+
 - [Théorie et construction des ordinaux](#théorie-et-construction-des-ordinaux)
   - [Ordres](#ordres)
     - [Définition](#définition)
@@ -33,29 +34,8 @@
       - [Unicité des ordinaux](#unicité-des-ordinaux)
         - [Lemme : Réciproque d'une bijection croissante](#lemme-réciproque-dune-bijection-croissante)
         - [Preuve](#preuve)
-  - [Ordinaux](#ordinaux)
-    - [Définition](#définition)
-    - [Quelques exemples](#quelques-exemples)
-    - [Propriétés](#propriétés)
-      - [Les éléments d'un ordinal sont des ordinaux](#les-éléments-dun-ordinal-sont-des-ordinaux)
-        - [Preuve](#preuve)
-          - [Transitivité](#transitivité)
-          - [Bon ordre](#bon-ordre)
-      - [Ordre large sur les ordinaux](#ordre-large-sur-les-ordinaux)
-        - [L'ordre large est inclus dans $\subseteq$](#lordre-large-est-inclus-dans-subseteq)
-        - [$\subseteq$ est inclus dans l'ordre large](#subseteq-est-inclus-dans-lordre-large)
-          - [$\gamma\subseteq\beta$](#gammasubseteqbeta)
-          - [$\beta\subseteq\gamma$](#betasubseteqgamma)
-      - [Successeur](#successeur)
-        - [$\alpha^+$ est un ordinal](#alpha-est-un-ordinal)
-          - [$\alpha^+$ transitif](#alpha-transitif)
-          - [$\in$ est un ordre](#in-est-un-ordre)
-          - [Bon ordre](#bon-ordre)
-      - [Totalité de $\in$](#totalité-de-in)
-      - [Bon ordre des ensembles d'ordinaux](#bon-ordre-des-ensembles-dordinaux)
-      - [Majorant d'un ensemble d'ordinaux](#majorant-dun-ensemble-dordinaux)
-    - [Arithmétique ordinale](#arithmétique-ordinale)
-<!--toc:end-->
+  - [Ordinaux](#ordinaux) - [Définition](#définition) - [Quelques exemples](#quelques-exemples) - [Propriétés](#propriétés) - [Les éléments d'un ordinal sont des ordinaux](#les-éléments-dun-ordinal-sont-des-ordinaux) - [Preuve](#preuve) - [Transitivité](#transitivité) - [Bon ordre](#bon-ordre) - [Ordre large sur les ordinaux](#ordre-large-sur-les-ordinaux) - [L'ordre large est inclus dans $\subseteq$](#lordre-large-est-inclus-dans-subseteq) - [$\subseteq$ est inclus dans l'ordre large](#subseteq-est-inclus-dans-lordre-large) - [$\gamma\subseteq\beta$](#gammasubseteqbeta) - [$\beta\subseteq\gamma$](#betasubseteqgamma) - [Antiréflexivité de $\in$ sur les ordinaux](#antiréflexivité-de-in-sur-les-ordinaux) - [Preuve](#preuve) - [Successeur](#successeur) - [$\alpha^+$ est un ordinal](#alpha-est-un-ordinal) - [$\alpha^+$ transitif](#alpha-transitif) - [$\in$ est un ordre](#in-est-un-ordre) - [Bon ordre](#bon-ordre) - [Passage à l'ordre large](#passage-à-lordre-large) - [$\alpha^+$ est le successeur de $\alpha$](#alpha-est-le-successeur-de-alpha) - [Totalité de $\in$](#totalité-de-in) - [Preuve](#preuve) - [Bon ordre des ensembles d'ordinaux](#bon-ordre-des-ensembles-dordinaux) - [Preuve](#preuve) - [Majorant d'un ensemble d'ordinaux](#majorant-dun-ensemble-dordinaux) - [Preuve](#preuve) - [Transitivité](#transitivité) - [Bon ordre](#bon-ordre) - [Opérations élémentaires sur les ordinaux](#opérations-élémentaires-sur-les-ordinaux)
+  <!--toc:end-->
 
 Qu'y a-t-il après l'infini dénombrable ($\#\N$) ? On sait que $\N=(\N+1)\cup\{0\}$, et pourtant il est tentant de dire que $(\N+1)\cup\{0\}$ contient un élément de plus que $\N$ (on a décalé de $1$ et ajouté $0$): les ordinaux formalisent cette notion, en ce qu'ils permettent d'ordonner différents infinis.
 
@@ -272,6 +252,7 @@ On dit qu'un ensemble $\alpha$ est un ordinal lorsque :
 - transitivité : $\forall x\in \alpha,\quad\forall y\in x,\quad y\in \alpha$
 
   De manière équivalente : $\forall x\in\alpha,\quad x\subseteq\alpha$
+
 - $\in$ est un bon ordre sur $\alpha$
 
 ### Quelques exemples
@@ -298,12 +279,13 @@ Si $\beta\in\alpha$ et que $\alpha$ est un ordinal, alors $\beta$ est un ordinal
 ###### Transitivité
 
 Soient $x\in\beta$ et $y\in x$. Par hypothèse, $y\in x\in\alpha$ (transitivité sur $\alpha$), donc $y\in\alpha$. Or, $\alpha$ est bien ordonné par $\in$ et :
+
 - $y\in\alpha$
 - $x\in\alpha$
 - $\beta\in\alpha$
 - $y\in x\in\beta$
 
-Ceci entraîne donc que $y\in\beta$ car $\in$ est une relation d'ordre (transitive) sur $\alpha$. 
+Ceci entraîne donc que $y\in\beta$ car $\in$ est une relation d'ordre (transitive) sur $\alpha$.
 
 _ATTENTION : il est nécessaire de bien faire ces vérifications d'appartenance à $\alpha$, car une série d'appartenance en série, même si $\in$ est une "relation d'ordre", n'est pas automatiquement réduite par transitivité : rien n'indique que l'on est dans le bon ensemble sur lequel comparer. Pour donner un contre-exemple, on peut prendre $\alpha=\{\{\{0\}\}\}$, $y=0$, $x=\{0\}$, $\beta=\{\{0\}\}$ : on a bien $y\in x\in\beta\in\alpha$, mais on n'a pas $y\in\alpha$ ! Pourtant $\in$ est une bien relation d'ordre strict sur $\alpha$ (même un bon ordre) car $\alpha$ n'a qu'un seul élément…_
 
@@ -368,14 +350,14 @@ Si $x\in\alpha^+$, alors $x\in\alpha$ donc $x\subseteq\alpha$ (transitivité de 
 - antiréflexivité : si $x\in\alpha^+$, soit $x=\alpha$, ou alors $x\in\alpha$, mais [tout élément d'un ordinal est un ordinal](#les-éléments-dun-ordinal-sont-des-ordinaux) , donc $x$ est un ordinal dans tous les cas. De là, par [antiréflexivité de $\in$ sur les ordinaux](#antiréflexivité-de-in-sur-les-ordinaux), $x\notin x$.
 - transitivité : Si $(x,y,z)\in(\alpha^+)^3$ avec $x\in y$ et $y\in z$. On rappelle que cela signifie en particulier que $x$, $y$ et $z$ sont tous des ordinaux (d'après le point précédent), on résume les différents cas possibles ($x\in\alpha$ ou $x=\alpha$) dans le tableau suivant, où $\in$ symbolise le premier cas, et $=$ désigne le second (s'il n'y a rien dans la case, le raisonnement est valide indépendamment du cas):
 
-| $x$ | $y$ | $z$ | conclusion |
-| -- | - | - | - |
-| $\in$ | $\in$ | $\in$ | c'est une conséquence de la transitivité de $\in$ sur $\alpha$ |
-| $\in$ | $\in$ | $=$ | on a immédiatement $x\in z=\alpha$ |
-| $\in$ | $=$ | $\in$ | $y=\alpha\in z\in\alpha$ entraîne $\alpha\subseteq z\subseteq\alpha$ donc $z=\alpha$, mais alors $\alpha\in\alpha$ ce qui est absurde |
-| $=$ | $\in$ |  | $x=\alpha\in y\in\alpha$ entraîne $\alpha\subseteq y\subseteq\alpha$ donc $y=\alpha$, mais alors $\alpha\in\alpha$ ce qui est absurde |
-| $\in$ | $=$ | $=$ | on a $\alpha=y\in z=\alpha$, ce qui est absurde |
-| $=$ | $=$ | | on a $\alpha=x\in y=\alpha$, ce qui est absurde |
+| $x$   | $y$   | $z$   | conclusion                                                                                                                            |
+| ----- | ----- | ----- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| $\in$ | $\in$ | $\in$ | c'est une conséquence de la transitivité de $\in$ sur $\alpha$                                                                        |
+| $\in$ | $\in$ | $=$   | on a immédiatement $x\in z=\alpha$                                                                                                    |
+| $\in$ | $=$   | $\in$ | $y=\alpha\in z\in\alpha$ entraîne $\alpha\subseteq z\subseteq\alpha$ donc $z=\alpha$, mais alors $\alpha\in\alpha$ ce qui est absurde |
+| $=$   | $\in$ |       | $x=\alpha\in y\in\alpha$ entraîne $\alpha\subseteq y\subseteq\alpha$ donc $y=\alpha$, mais alors $\alpha\in\alpha$ ce qui est absurde |
+| $\in$ | $=$   | $=$   | on a $\alpha=y\in z=\alpha$, ce qui est absurde                                                                                       |
+| $=$   | $=$   |       | on a $\alpha=x\in y=\alpha$, ce qui est absurde                                                                                       |
 
 _Remarquons qu'on a bien énuméré tous les cas, qui sont au nombre de $2^3=8$._
 
@@ -384,6 +366,7 @@ On a donc montré que pour les cas non triviaux, il y a bien transitivité de $\
 ###### Bon ordre
 
 Si $A\subseteq\alpha^+$ non vide, on distingue deux cas :
+
 - $\alpha\notin A$ : dans ce cas, $A\subseteq\alpha$ et $A$ admet donc un plus petit élément pour $\in$ par bon ordre de $\alpha$
 - $\alpha\in A$ : si $A\backslash\alpha=\empty$, $\alpha$ est bien le plus petit élément de $A$, sinon on prend le plus petit élément $x$ de $A\backslash\alpha$ : [la preuve de la transitivité](#alpha-transitif) donne immédiatement que $x\subseteq\alpha$, et donc $x$ est bien le plus petit élément de $A$ (puisque $\subseteq$ est un ordre large).
 
@@ -412,10 +395,70 @@ Soit $A$ un ensemble d'ordinaux. Alors $(A,\in)$ est bien ordonné.
 
 ##### Preuve
 
-###### $(A,\in)$ est ordonné
+Il est tout d'abord évident que $\in$ est un ordre sur $A$ puisque $\in$ est total sur la classe des ordinaux. Il reste donc à montrer que c'ste bon ordre. Pour cela, on considère $\beta=\bigcap\limits_{\alpha\in A}\alpha$ qui est inférieur à l'ensemble des éléments de $A$ (qu'on suppose évidemment non vide, il n'y a rien à montrer si $A=\empty$). Il s'agit de montrer que $\beta\in A$ : supposons par l'absurde que ce n'est pas le cas, ainsi on en déduit que pour tout $\alpha\in A$, $\beta\in\alpha$ (car $\beta\subseteq\alpha$ par définition). Ceci se réécrit précisément comme $\beta\in\bigcap\limits_{\alpha\in A}\alpha=\beta$. Or $\beta\in\alpha_0\in A$ (pour un $\alpha_0$ quelconque) donc $\beta$ est un ordinal et cette conclusion est absurde. Donc $\beta\in A$ est bien un minorant de $A$.
 
-###### $\in$ est un bon ordre
+Remarquons que cette preuve est suffisante : si on prend une partie non vide de $A$, il s'agit encore d'un ensemble d'ordinaux et le résultat précédent s'applique.
 
 #### Majorant d'un ensemble d'ordinaux
 
-### Arithmétique ordinale
+Si $A$ est un ensemble d'ordinaux, alors $\bigcup\limits_{\alpha\in A}\alpha$ est un ordinal.
+
+##### Preuve
+
+###### Transitivité
+
+Si $x\in\bigcup\limits_{\alpha\in A}\alpha$, alors il existe $\alpha\in A$ tel que $x\in\alpha$ : par transitivité de $\alpha$, $x\subseteq\alpha\subseteq\bigcup\limits_{\alpha\in A}\alpha$, i.e. $x\subseteq\bigcup\limits_{\alpha\in A}\alpha$.
+
+###### Bon ordre
+
+$\bigcup\limits_{\alpha\in A}\alpha$ est un ensemble d'ordinaux (car c'est une réunion d'ordinaux, qui sont des [ensembles d'ordinaux](#les-éléments-dun-ordinal-sont-des-ordinaux)) et la propriété précédente garantit qu'il est donc bien ordonné.
+
+### Opérations élémentaires sur les ordinaux
+
+L'ensemble des propriétés élémentaires (et attendues) sur les ordinaux étant démontrées, nous allons désormais utiliser les notations usuelles pour les ordres sur les ordinaux : $<$ pour $\in$ et $\leq$ pour $\subseteq$.
+
+Nous allons montrer quelques propriétés générales sur les ordinaux, qui sont très analogues à celles sur les entiers naturels. Nous rappelons que les opérations élémentaires ($+$, $\times$ et exponentiation) sont bien définies pour les ensembles bien ordonnés, et a fortiori pour les ordinaux.
+
+#### Définition : ordinaux limites
+
+$\alpha$ est dit ordinal limite lorsqu'il s'agit d'un ordinal qui ne le successeur d'aucun autre.
+
+##### Exemple
+
+Étant donné $\N$, construit par exemple dans l'axiomatique de Peano ou dans le modèle ZF[C], on pose $\overline0=\empty$ et $\overline{n+1}=\overline n^+$. Remarquons au passage que cette construction est saine car $\#\overline n=n$ !
+
+Par suite, le premier ordinal limite est $\omega=\bigcup\limits_{n\in\N}\overline n$.
+
+#### Successeur naturel
+
+Si $\alpha$ est un ordinal, alors $\alpha^+=\alpha+\overline1$.
+
+#### Éléments neutres et absorbants
+
+Si $\alpha$ est un ordinal, alors :
+
+1. $\overline0+\alpha=\alpha+\overline0=\alpha$
+1. $\overline1\times\alpha=\alpha\times\overline1=\alpha$.
+1. $\overline0\times\alpha=\alpha\times\overline0=\overline0$.
+1. si $\alpha\neq\overline0$, alors $\overline0^\alpha=\overline0$
+1. $\overline0^\overline0=\overline1$ (convention)
+1. $\alpha^{\overline0}=\overline1$
+1. $\alpha^{\overline1}=\alpha$
+
+#### Distributivités
+
+Si $\alpha$, $\beta$ et $\gamma$ sont des ordinaux, alors :
+
+1. $\alpha(\beta+\gamma)=\alpha\times\beta+\alpha\times\gamma$
+1. $\alpha^{\beta+\gamma}=\alpha^\beta\times\alpha^\gamma$
+1. $(\alpha^\beta)^\gamma=\alpha^{\beta\gamma}$
+
+**ATTENTION** : contrairement à l'arithmétique usuelle, on n'a pas la distributivité à droite de $\times$ sur $+$
+
+#### Les opérations sont compatibles avec l'ordre
+
+Si $\alpha$, $\beta$ et $\gamma$ sont des ordinaux, alors :
+
+1. si $\alpha<\beta$, alors $\alpha+\gamma<\beta+\gamma$
+1. si $\alpha\neq\overline0$ et que $\beta<\gamma$, alors $\alpha\beta<\beta\gamma$
+1. si $\alpha>\overline1$ et que $\beta<\gamma$, alors $\alpha^\beta<\alpha^\gamma$
