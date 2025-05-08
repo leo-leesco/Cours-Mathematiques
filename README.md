@@ -1,4 +1,5 @@
 <!-- LTeX: language=fr-FR -->
+
 # Plan du cours
 
 Petite liste des sujets traités dans le cours.
@@ -76,6 +77,7 @@ Petite liste des sujets traités dans le cours.
 - notion de degré, arithmétique polynomiale
 - dérivation formelle, intégration formelle
 - théorème de Gauss-Lucas
+- théorème de Weierstrass
 
 #### Équations différentielles linéaires
 
@@ -119,6 +121,7 @@ Petite liste des sujets traités dans le cours.
 - propriété de Borel-Lebesgue
 - intégrale de Lebesgue
 - espaces vectoriels topologiques
+- théorème de Bolzano-Weierstrass
 
 ### Analyse sur les Banach
 
@@ -139,12 +142,20 @@ Petite liste des sujets traités dans le cours.
 ### Analyse asymptotique
 
 - équivalents, $o$ et $O$
+  - intégration d'un DL
+  - Taylor-Young
+  - Taylor reste intégral
+  -
 - méthodes d'approximation
   - méthode de la loupe
 - grands résultats d'approximation
+  - croissances comparées
   - formule de Stirling
-  - série harmonique
-  - 
+  - DL classiques
+    - fonctions trigonométriques et hyperboliques
+    - série harmonique
+    - exponentielle, logarithme autour de 0/1
+    - fractions rationnelles
 - théorèmes de convergence dominée
 
 ### Séries entières
